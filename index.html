@@ -2,42 +2,313 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLAS 2026 Conference</title>
+    <title>PLAS 2025 - Workshop on Programming Languages and Analysis for Security</title>
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css">
+<!-- 	<style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+            text-align: left;
+        }
+    </style> -->
 </head>
 <body>
     <header>
-        <h1>PLAS 2026</h1>
-        <p>Join us for the PLAS 2026 Conference!</p>
+        <h1>20th Workshop on Programming Languages and Analysis for Security (PLAS 2025)</h1>
+<p style="font-size:160%;">Co-located with <a href="https://www.sigsac.org/ccs/CCS2025/" style="color:White;strong;">CCS 2025</a></p>
+<p>October 13, 2025</p>
+<p>Taipei, Taiwan</p>
     </header>
-    <section>
-        <h2>Program Committee</h2>
+
+    <nav>
         <ul>
-            <li>Placeholder Name 1</li>
-            <li>Placeholder Name 2</li>
-            <li>Placeholder Name 3</li>
+            <li><a href="#overview">Overview</a></li> 
+            <li><a href="#topics">Scope</a></li> 
+            <li><a href="#submission">Submissions</a></li> 
+            <li><a href="#committee">Committee</a></li>
+            <li><a href="#history">Previous Editions</a></li>
         </ul>
-    </section>
-    <section>
-        <h2>Keynote Speakers</h2>
-        <ul>
-            <li>Placeholder Keynote Speaker 1</li>
-            <li>Placeholder Keynote Speaker 2</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Program Schedule</h2>
-        <!--
-        <h3>Sample Schedule</h3>
-        <ul>
-            <li>Day 1: Opening Ceremony</li>
-            <li>Day 2: Keynote Speeches</li>
-            <li>Day 3: Workshops and Panels</li>
-        </ul>
-        -->
-    </section>
+    </nav>
+
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>PLAS explores the use of programming language and program analysis techniques to improve software security across compilers, machine learning models, and smart contracts. It promotes speculative, forward-looking ideas and insightful discussions at the intersection of programming languages and security.</p>
+
+<!-- 	    <h3>Invited Speakers</h3>
+        <div style="display: flex; gap: 40px;">
+  
+        <div style="text-align: center;">
+            <img src="https://www.ece.cmu.edu/directory/images/faculty/J/limin-jia-800x800.jpg" 
+                alt="Limin Jia" height="200" width="200">
+            <br/>
+            <a href="https://www.andrew.cmu.edu/user/liminjia/">Limin Jia</a>
+            <p>Carnegie Mellon University</p>
+        </div>
+        
+        <div style="text-align: center;">
+            <img src="reineke.jpeg" alt="Jan Reineke" height="200" width="200">
+            <br/>
+            <a href="https://embedded.cs.uni-saarland.de/reineke.php">Jan Reineke</a>
+            <p>Saarland University</p>
+        </div> -->
+
+<div class="row">
+  <div class="col-12">
+    <h2>Invited Speakers</h2>
+  </div>
+  <div class="col-12 col-md-3 cn">
+    <center class="inner"><a href="https://www.andrew.cmu.edu/user/liminjia/"><img class="rounded img-fluid" src="https://www.ece.cmu.edu/directory/images/faculty/J/limin-jia-800x800.jpg" height="200" width="200"/><br/>Limin Jia</a><br/>
+    (Carnegie Mellon University)<br/><br/>
+  </center>
+  </div>
+  <div class="col-12 col-md-9";>
+   <br/>
+    <h4 text-align="left">Automatically synthesizing exploits for code injection attacks in Node.js packages using types</h4>
+   <p><b>Abstract.</b>
+   JavaScript is widely used in applications, via the Node.js runtime. Unfortunately, code-injection vulnerabilities, such as those that allow arbitrary code execution, are frequently found in Node.js packages. Most existing vulnerability-detection tools don’t construct proof-of-concept (PoC) exploits to help developers investigate potential vulnerabilities. In this talk, I will present our work on automatically generating exploits to help developers understand code-injection vulnerabilities. Node.js packages do not come with type specifications, which makes it challenging to generate appropriate inputs to APIs. Our novel exploit synthesis algorithms use output from program analysis to generate inputs of a specific type or with a specific structure and non-trivial interactions with the package API under test. Our evaluations show that we can synthesize PoC for a large fraction of the reported code injection vulnerabilities.   
+   </p>
+  </div>
+  <div class="col-12 col-md-3 cn">
+    <center class="inner"><a href="https://embedded.cs.uni-saarland.de/reineke.php"><img class="rounded img-fluid" src="reineke.jpeg" height="200" width="200"/><br/>Jan Reineke</a><br/>
+    (Saarland University)<br/><br/>
+  </center>
+  </div>
+  <div class="col-12 col-md-9";>
+   <br/>
+    <h4 text-align="left">Verification and Synthesis of Hardware-Software Leakage Contracts</h4>
+   <p><b>Abstract.</b> Microarchitectural attacks undermine security by exploiting software-visible side effects of hardware optimizations such as caching and speculative execution. To use modern processors securely, programmers must understand the security consequences of these optimizations. Yet, instruction set architectures (ISAs), the traditional interface between hardware and software, are ill-suited for this purpose: they abstract away microarchitectural details entirely and therefore fail to reflect their security impact. To enable the construction of secure software systems on top of modern hardware, we have recently proposed leakage contracts as a new security abstraction at the ISA level. However, leakage contracts are only useful once processors are available that are known to satisfy them. 
+	<br/>
+In this talk, I will introduce 1. LeaVe, a tool for the verification of register-transfer-level (RTL) processor designs against ISA-level leakage contracts, and 2. LeaSyn, a tool and methodology for the synthesis of precise and sound leakage contracts. To scale to realistic processor designs, LeaVe exploits a decoupling theorem that allows to separate security and functional correctness concerns. LeaVe employs inductive reasoning on relational abstractions to obtain unbounded contract satisfaction proofs and invariant synthesis to automate the process. Using LeaVe and LeaSyn, we precisely characterize the side-channel leakage of three open-source RISC-V processors at the ISA level.</p>
+  </div>
+<br/>
+
+
+			
+	    <!-- <img src="https://www.ece.cmu.edu/directory/images/faculty/J/limin-jia-800x800.jpg" alt="Limin Jia" height=200 width=200></img><br/>
+	    <a href="https://www.andrew.cmu.edu/user/liminjia/">Limin Jia </a>	
+	    <p>Carnegie Mellon University</p> -->
+	</section>
+
+		<section id="program">
+            <h2>Tentative Program</h2>
+			<table style="width:100%; border-collapse: collapse; font-family: Arial, sans-serif;">
+        <thead>
+            <tr>
+                <th style="text-align: left; padding: 8px; white-space: nowrap;">Time</th>
+      			<th style="text-align: left; padding: 8px; white-space: nowrap;">Event</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+      <td style="padding: 8px; white-space: nowrap;">8:50 AM - 9:00 AM</td>
+      <td style="padding: 8px;">Opening remarks</td>
+    </tr>
+    <!-- Keynote Session Header -->
+    <tr>
+      <td colspan="2" style="padding: 8px; background-color: #d9d9d9; font-weight: bold;">Keynote talk</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 8px; white-space: nowrap;">9:00 AM - 10:00 AM</td>
+     <td style="padding: 8px;"><strong>Automatically synthesizing exploits for code injection attacks in Node.js packages using types</strong><br> Limin Jia</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; background-color: #d9d9d9; font-weight: bold; white-space: nowrap;">10:00 AM - 10:30 AM</td>
+      <td style="padding: 8px; background-color: #d9d9d9; font-weight: bold;">Paper Presentations</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 8px; white-space: nowrap;">10:00 AM - 10:30 AM</td>
+      <td style="padding: 8px;"><strong>Speeding Up Pre-Image Computation of Regular Languages under Prioritized Streaming String Transducers for Injection Vulnerability Detection</strong><br>Nariyoshi Chida, Daisuke Yamaguchi and Hiroyuki Uekawa (NTT)</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;">10:30 AM - 11:00 AM</td>
+      <td style="padding: 8px;">Coffee Break</td>
+    </tr>
+    <!-- Paper Presentation Session Header -->
+    <tr>
+      <td style="padding: 8px; background-color: #d9d9d9; font-weight: bold; white-space: nowrap;">11:00 AM - 12:00 PM</td>
+      <td style="padding: 8px; background-color: #d9d9d9; font-weight: bold;">Paper Presentations</td>
+    </tr>
+    <!-- Papers -->
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 8px; white-space: nowrap;">11:00 AM - 11:30 AM</td>
+      <td style="padding: 8px;"><strong>LibBinLLM: Towards LLM Powered Runtime Library Identification for Optimized Binaries </strong><br>Nasir Hussain, Ying Li, Yuan Tian (UCLA) and Ashish Kundu (Cisco Research)</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 8px; white-space: nowrap;">11:30 AM - 12:00 PM</td>
+      <td style="padding: 8px;"><strong>Permissive IFC Type System for Control-Flow Operations </strong><br> Wesley B Nuzzo, Benjamin Houle, Samuel Dodson and Anitha Gollamudi (University of Massachusetts, Lowell)</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;">12:00 PM - 1:30 PM</td>
+      <td style="padding: 8px;">Lunch Break</td>
+    </tr>
+	<tr>
+      <td colspan="2" style="padding: 8px; background-color: #d9d9d9; font-weight: bold;">Keynote talk</td>
+    </tr>
+	<tr style="background-color: #f2f2f2;">
+      <td style="padding: 8px; white-space: nowrap;">1:30 PM - 2:30 PM</td>
+     <td style="padding: 8px;"><strong>Verification and Synthesis of Hardware-Software Leakage Contracts</strong><br>Jan Reineke</td>
+    </tr>
+    <!-- Paper Presentation Session Header -->
+    <tr>
+      <td style="padding: 8px; background-color: #d9d9d9; font-weight: bold; white-space: nowrap;">2:30 PM - 3:00 PM</td>
+      <td style="padding: 8px; background-color: #d9d9d9; font-weight: bold;">Paper Presentations</td>
+    </tr>
+    <!-- Papers -->
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 8px; white-space: nowrap;">2:30 PM - 3:00 PM</td>
+      <td style="padding: 8px;"><strong>From Circuits to Programs - Control-Flow Probes for Formal Side-Channel Security</strong><br> Marc Gourjon (Max Planck Institute for Security and Privacy), Nora Khayata and Maximilian Orlt (TU Darmstadt)</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;">3:00 PM - 3:30 PM</td>
+      <td style="padding: 8px;">Coffee Break</td>
+    </tr>
+	<tr>
+      <td style="padding: 8px; background-color: #d9d9d9; font-weight: bold; white-space: nowrap;">3:30 PM - 4:00 PM</td>
+      <td style="padding: 8px; background-color: #d9d9d9; font-weight: bold;">Paper Presentations</td>
+    </tr>
+    <!-- Papers -->
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 8px; white-space: nowrap;">3:30 PM - 4:00 PM</td>
+      <td style="padding: 8px;"><strong>Conditional Delta Tagging for Compatible Buffer Overflow Protection </strong><br>Floris Gorter and Cristiano Giuffrida (Vrije Universiteit Amsterdam)  </td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 8px; white-space: nowrap;">4:00 PM - 4:30 PM</td>
+     <td style="padding: 8px;"><strong>Open Discussion</strong><br></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;">4:30 PM onwards</td>
+      <td style="padding: 8px;">Closing remarks and informal dinner</td>
+    </tr>
+        </tbody>
+    </table>
+		</section>
+							 
+        <section id="topics">
+            <h2>Scope</h2>
+            <ul>
+                <li>Side-channel vulnerability detection and elimination</li>
+                <li>Verification techniques applied to adversarial learning and smart contracts</li>
+                <li>Software isolation (e.g., SFI, sandboxing)</li>
+                <li>Compiler/runtime-based hardening and monitoring</li>
+                <li>Program analysis, binary analysis, and fuzzing</li>
+                <li>Security enforcement mechanisms</li>
+                <li>Cryptographic protocol verification</li>
+                <li>Information flow and access control</li>
+                <li>Security in web, IoT, and cloud programming languages</li>
+            </ul>
+        </section>
+
+        <section id="submission">
+	    <h2>Submission Guidelines</h2>
+	    <p>We invite both short papers and long papers. For short
+	    papers, we especially encourage the submission of position
+	    papers that are likely to
+	    generate lively discussion as well as short papers covering ongoing and future  work. </p>
+	    <ul>
+	      <li><strong>Full papers:</strong> There is no page limit on long papers.
+	      Papers in this category are expected to have relatively mature content.
+	      Papers that present promising preliminary and exploratory work, or recently
+	      published work are particularly welcome in this category. Long papers may
+	      receive longer talk slots at the workshop than short papers, depending on
+	      the number of accepted submissions.
+	      </li>
+	      <li><strong>Short papers:</strong> should be at most 2 pages long, plus as
+	      many pages as needed for references. Papers that present radical, open-ended
+	      and forward-looking ideas are particularly welcome in this category. Authors
+	      submitting papers in this category must prepend the phrase "Short Paper:" to
+	      the title of the submitted paper.
+	      </li>
+	    </ul>
+	    <p>
+	    The workshop has no published workshop proceedings
+	    and there is no restriction on paper format other than the page limits 
+	    stated above. Presenting a paper (either short or long) at the workshop
+	    does not preclude submission to or publication in other venues that are
+	    before, concurrent, or after the workshop. Papers presented at the workshop
+	    will be made available to workshop participants only.
+	    </p>
+	    
+	    <p>Please submit your submissions (in PDF format) via the following website: <a href="https://plas25.hotcrp.com/">https://plas25.hotcrp.com</a>. We follow a single-blind reviewing process, so you do not need to anonymize your submissions.
+	    
+	    </p><h3>Important Dates</h3>
+	    <dl>
+	      <dt>Paper submission: <del>June 20</del> <span style="color: #ff0000">July 4</span>, 2025 AoE </dt>
+	      <dt>Author notification: August 8, 2025</dt>
+	      <dt>Workshop date: October 13, 2025</dt>
+	    </dl>
+
+	    </section>
+
+
+        <section id="committee">
+            <h2>Program Committee</h2>
+            <ul>
+                <li>Amir Ahmadian (KTH, Sweden)</li>
+                <li>Sebastien Bardin (CEA, France)</li>
+                <li>Abhishek Bichhawat (IIT Gandhinagar, India) <b>(co-chair)</b></li>
+                <li>Ferhat Erata (Yale, USA)</li>
+                <li>Jana Hofmann (MPI-SP, Germany) <b>(co-chair)</b></li>
+                <li>Adrien Koutsos (Inria, France)</li>
+                <li>McKenna McCall (Carnegie Mellon University, USA)</li>
+                <li>Toby Murray (University of Melbourne, Australia)</li>
+                <li>Sabine Oechsner (VU Amsterdam, Netherlands)</li>
+            </ul>
+        </section>
+
+        <section id="history">
+            <h2>Previous Editions</h2>
+            <ul>
+                <li><strong><a href="https://plas24.github.io/">PLAS
+            2024: Salt Lake City, USA</a></strong></li>
+                <li><strong><a href="https://plas23.github.io/">PLAS 2023: Copenhagen, Denmark</a></strong></li>
+                <li><strong><a href="https://plas2022.github.io/"
+            alt="ACM SIGSAC 17&lt;sup&gt;th&lt;/sup&gt; Workshop on
+            Programming Languages and Analysis for Security">PLAS
+		2022: Virtual</a></strong></li>
+		<li><strong><a
+            href="https://plas21.software.imdea.org/" alt="ACM SIGSAC
+            16&lt;sup&gt;th&lt;/sup&gt; Workshop on Programming
+            Languages and Analysis for Security">PLAS 2021:
+            Virtual </a>
+		</strong></li>
+		<li><strong><a href="https://pages.cispa.de/plas2020/"
+            alt="ACM SIGSAC 15&lt;sup&gt;th&lt;/sup&gt; Workshop on
+            Programming Languages and Analysis for Security">PLAS
+            2020: Virtual </a>
+		</strong></li>
+		<li><strong><a
+            href="http://www.andrew.cmu.edu/user/pmardzie/plas2019/"
+            alt="ACM SIGSAC 14&lt;sup&gt;th&lt;/sup&gt; Workshop on
+            Programming Languages and Analysis for Security">PLAS
+            2019: London, UK </a>
+		</strong></li>
+		<li><strong><a href="https://plas2018.dcc.ufmg.br/"
+            alt="ACM SIGPLAN 13&lt;sup&gt;th&lt;/sup&gt; Workshop on
+            Programming Languages and Analysis for Security">PLAS
+            2018: Toronto, CA </a> 
+		</strong></li>
+		<li><strong><a href="http://plas2017.cse.buffalo.edu/"
+            alt="ACM SIGPLAN 12&lt;sup&gt;th&lt;/sup&gt; Workshop on
+            Programming Languages and Analysis for Security">PLAS
+            2017: Dallas, TX, USA </a>
+		</strong></li>
+		<li><strong><a
+            href="https://cseweb.ucsd.edu/~dstefan/conf/plas2016/"
+            alt="ACM SIGPLAN 11&lt;sup&gt;th&lt;/sup&gt; Workshop on
+            Programming Languages and Analysis for Security">PLAS
+            2016: Vienna, Austria </a></strong></li>
+            </ul>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2026 PLAS Conference</p>
+        <p>&copy; 2025 PLAS Workshop Committee</p>
     </footer>
 </body>
 </html>
