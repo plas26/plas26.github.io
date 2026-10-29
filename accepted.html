@@ -672,54 +672,35 @@
             <tr style="background-color: #d9d9d9;">
               <td style="padding: 8px;">
                 <strong>
-                  Reasoning about Local Capability Revocation Using Logical Memory
-                  and Ghost Stacks
+                  Amarena: Reasoning about Revoking and Suspending Memory Access on Capability Machines
                 </strong>
                 <br>
-                Youie Li and
+                Youie Ly and
                 Dominique Devriese (KU Leuven)
                 <br>
             </td></tr>
             <tr>
               <td style="padding: 8px; background-color: #f2f2f2;">
                 <i>
-                  Safe memory reuse requires revoking earlier
-                  authority when interacting with untrusted code.  In
-                  this paper, we focus on stack revocation on
-                  capability machines using local capabilities, a
-                  hardware mechanism that supports secure
-                  stack-sharing calling conventions and temporal
-                  memory safety.  Existing work on robust safety with
-                  local capability revocation cannot use standard
-                  separation logic machinery, such as points-to
-                  assertions and invariants, for revocable memory.  It
-                  instead resorts to step-indexed Kripke logical
-                  relations indexed by worlds with public and private
-                  transitions.  However, worlds and their transitions
-                  force users to work at a low level of abstraction,
-                  complicating ordinary spatial reasoning even when
-                  revocation is not involved.
-
-                  We present \textbf{Amarena}, a program logic and
-                  logical relation for robust safety under local
-                  capability revocation, as a simpler alternative to
-                  the Kripke approach used in prior work.  Amarena
-                  adapts logical memory to express temporary
-                  assertions over revocable stack regions and uses
-                  ghost stacks to reason about well-bracketed control
-                  flow.  The first novelty is support for
-                  \emph{component-local} unreachability, which
-                  violates the global unreachability the original
-                  approach requires for soundness.  The second novelty
-                  is a ghost operation for reversible revocation, a
-                  principle that is unsound in the original
-                  garbage-collection setting.  We evaluate Amarena on
-                  examples using an existing secure calling
-                  convention, including the Very Awkward Example, and
-                  show that it disentangles revocation reasoning from
-                  ordinary spatial reasoning more cleanly than the
-                  Kripke approach.  The development is mechanized in
-                  Rocq on top of Iris.
+                  Verification of robust safety on capability machines has seen steady progress toward more realistic machine
+				 architecture, more advanced security mechanisms, and better proof automation. However, none of this recent
+				progress supports reasoning about both revoking and suspending delegated memory access. All earlier work
+				that does support it resorts to a Kripke logical relation indexed by worlds with public and private transitions,
+				an approach that has drawn recurring criticism for its complexity and poor usability. We argue that a simpler,
+				reusable foundation for reasoning about revocation and suspension is needed for such verification to scale, for
+				example, to larger machine models and more complex, interacting security mechanisms.
+									
+				We take a first step toward such a foundation by contributing an approach for expressing invariants that
+				hold only for a limited lifetime (e.g., until delegated access is revoked). We apply this approach to develop
+				Amarena, a program logic and logical relation built on Cerise and mechanized in Rocq. Amarena supports
+				reasoning about a stack-sharing calling convention that revokes and suspends memory access by limiting
+				where capabilities can be retained in memory.
+									
+				Our approach follows the lead of the broader literature on logical relations, moving away from explicit world
+				reasoning toward reusable rules that take full advantage of Iris’s ghost resources and invariants. Compared with
+				the Kripke approach, our approach’s specialized machinery for reasoning about revocation and suspension is
+				conceptually simpler and offers better compositionality. It is independent of any particular calling convention
+				or program, and is non-invasive, invoked only where revocation or suspension is relevant.
                 </i>
               </td>
             </tr>
