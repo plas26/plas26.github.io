@@ -90,7 +90,8 @@ footer {
 }
 
 #program table tr:has(strong) + tr td,
-#program table tr:has(strong) + tr:has(td:empty) + tr td {
+#program table tr:has(strong) + tr:has(td:empty) + tr td,
+#program table tr:has(strong) + tr:not(:has(i)) + tr td {
     padding: 0.9rem 1.25rem 1.15rem !important;
     background: #fff !important;
     border: 1px solid #d5e0eb;
@@ -104,13 +105,15 @@ footer {
 }
 
 #program table tr:has(strong) + tr i,
-#program table tr:has(strong) + tr:has(td:empty) + tr i {
+#program table tr:has(strong) + tr:has(td:empty) + tr i,
+#program table tr:has(strong) + tr:not(:has(i)) + tr i {
     display: block;
     font-style: normal;
 }
 
 #program table tr:has(strong) + tr i::before,
-#program table tr:has(strong) + tr:has(td:empty) + tr i::before {
+#program table tr:has(strong) + tr:has(td:empty) + tr i::before,
+#program table tr:has(strong) + tr:not(:has(i)) + tr i::before {
     content: "Abstract";
     display: block;
     margin-bottom: 0.35rem;
@@ -123,8 +126,8 @@ footer {
     text-align: left;
 }
 
-/* Hide the accidental empty spacer row in the first short-talk entry. */
-#program table td:empty {
+/* Hide the extra blank row before the first short-talk abstract. */
+#program table tr:has(strong) + tr:not(:has(i)) {
     display: none;
 }
 
@@ -135,7 +138,8 @@ footer {
 
     #program table tr:has(strong) td,
     #program table tr:has(strong) + tr td,
-    #program table tr:has(strong) + tr:has(td:empty) + tr td {
+    #program table tr:has(strong) + tr:has(td:empty) + tr td,
+    #program table tr:has(strong) + tr:not(:has(i)) + tr td {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
