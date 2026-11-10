@@ -52,83 +52,80 @@ footer {
     margin-top: 40px;
 }
 
-/* Accepted papers: clearer, more readable paper and abstract blocks. */
+/* A readable, conventional schedule table; keep session rows distinct from talks. */
 #program table {
+    display: block;
     width: 100%;
-    border-collapse: separate !important;
+    overflow-x: auto;
+    border-collapse: collapse !important;
     border-spacing: 0;
     font-family: inherit !important;
-    margin: 0.5rem 0 2rem;
+    margin: 1rem 0 2rem;
+    color: #263445;
 }
 
-#program table tr:has(strong) td {
-    padding: 1rem 1.25rem 0.8rem !important;
-    background: #eaf1f8 !important;
-    border-top: 1px solid #d5e0eb;
-    border-right: 1px solid #d5e0eb;
-    border-left: 1px solid #d5e0eb;
-    border-radius: 0.6rem 0.6rem 0 0;
+#program table thead,
+#program table tbody {
+    width: 100%;
 }
 
-#program table tr:has(strong) strong {
-    display: inline-block;
-    color: #12345a;
-    font-size: 1.12rem;
-    line-height: 1.4;
-    margin-bottom: 0.25rem;
-}
-
-#program table tr:has(strong) td br {
-    display: block;
-    content: "";
-    margin-top: 0.2rem;
-}
-
-#program table tr:has(strong) td {
-    color: #475569;
+#program table th,
+#program table td {
+    padding: 0.85rem 1rem !important;
+    border: 1px solid #d8e0e8;
+    text-align: left;
+    vertical-align: top;
     line-height: 1.55;
 }
 
-#program table tr:has(strong) + tr td,
-#program table tr:has(strong) + tr:has(td:empty) + tr td,
-#program table tr:has(strong) + tr:not(:has(i)) + tr td {
-    padding: 0.9rem 1.25rem 1.15rem !important;
-    background: #fff !important;
-    border: 1px solid #d5e0eb;
-    border-top: 0;
-    border-radius: 0 0 0.6rem 0.6rem;
-    color: #334155;
-    font-size: 1rem;
-    line-height: 1.75;
-    text-align: justify;
-    hyphens: auto;
-}
-
-#program table tr:has(strong) + tr i,
-#program table tr:has(strong) + tr:has(td:empty) + tr i,
-#program table tr:has(strong) + tr:not(:has(i)) + tr i {
-    display: block;
-    font-style: normal;
-}
-
-#program table tr:has(strong) + tr i::before,
-#program table tr:has(strong) + tr:has(td:empty) + tr i::before,
-#program table tr:has(strong) + tr:not(:has(i)) + tr i::before {
-    content: "Abstract";
-    display: block;
-    margin-bottom: 0.35rem;
-    color: #12345a;
-    font-size: 0.78rem;
-    font-style: normal;
+#program table th {
+    background: #002147;
+    color: #fff;
     font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: left;
 }
 
-/* Hide the extra blank row before the first short-talk abstract. */
-#program table tr:has(strong) + tr:not(:has(i)) {
-    display: none;
+#program table th:first-child,
+#program table td:first-child {
+    width: 1%;
+    white-space: nowrap;
+    color: #334155;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Talk rows should stay plain and easy to scan, not be mistaken for abstract cards. */
+#program table tbody tr:has(td strong) td {
+    background: #fff !important;
+}
+
+#program table tbody tr:has(td strong):nth-child(even) td {
+    background: #f7f9fc !important;
+}
+
+#program table td strong {
+    color: #12345a;
+    line-height: 1.45;
+}
+
+#program table td a {
+    white-space: nowrap;
+}
+
+/* Session labels and the keynote label are full-width visual dividers. */
+#program table tbody tr:has(td[style*="background-color: #d9d9d9"]) td,
+#program table tbody tr:has(td[colspan="2"]) td {
+    background: #e8eef5 !important;
+    color: #12345a;
+    font-weight: 700;
+    border-top: 2px solid #b8c8d9;
+}
+
+#program table tbody tr:has(td[colspan="2"]) td {
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+#program > p {
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 600px) {
@@ -136,15 +133,16 @@ footer {
         padding: 16px;
     }
 
-    #program table tr:has(strong) td,
-    #program table tr:has(strong) + tr td,
-    #program table tr:has(strong) + tr:has(td:empty) + tr td,
-    #program table tr:has(strong) + tr:not(:has(i)) + tr td {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+    nav ul li {
+        display: inline-block;
+        margin: 0.35rem 0.5rem;
     }
 
-    #program table tr:has(strong) strong {
-        font-size: 1.02rem;
+    #program table {
+        min-width: 680px;
+    }
+
+    #program {
+        overflow-x: auto;
     }
 }
