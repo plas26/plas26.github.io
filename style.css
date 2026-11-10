@@ -51,3 +51,90 @@ footer {
     padding: 10px;
     margin-top: 40px;
 }
+
+/* Accepted papers: clearer, more readable paper and abstract blocks. */
+#program table {
+    width: 100%;
+    border-collapse: separate !important;
+    border-spacing: 0;
+    font-family: inherit !important;
+    margin: 0.5rem 0 2rem;
+}
+
+#program table tr:has(strong) td {
+    padding: 1rem 1.25rem 0.8rem !important;
+    background: #eaf1f8 !important;
+    border-top: 1px solid #d5e0eb;
+    border-right: 1px solid #d5e0eb;
+    border-left: 1px solid #d5e0eb;
+    border-radius: 0.6rem 0.6rem 0 0;
+}
+
+#program table tr:has(strong) strong {
+    display: inline-block;
+    color: #12345a;
+    font-size: 1.12rem;
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+}
+
+#program table tr:has(strong) td br {
+    display: block;
+    content: "";
+    margin-top: 0.2rem;
+}
+
+#program table tr:has(strong) td {
+    color: #475569;
+    line-height: 1.55;
+}
+
+#program table tr:has(strong) + tr td {
+    padding: 0.9rem 1.25rem 1.15rem !important;
+    background: #fff !important;
+    border: 1px solid #d5e0eb;
+    border-top: 0;
+    border-radius: 0 0 0.6rem 0.6rem;
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.75;
+    text-align: left;
+}
+
+#program table tr:has(strong) + tr i {
+    display: block;
+    font-style: normal;
+}
+
+#program table tr:has(strong) + tr i::before {
+    content: "Abstract";
+    display: block;
+    margin-bottom: 0.35rem;
+    color: #12345a;
+    font-size: 0.78rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Hide the accidental empty spacer row in the first short-talk entry. */
+#program table td:empty {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 16px;
+    }
+
+    #program table tr:has(strong) td,
+    #program table tr:has(strong) + tr td {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    #program table tr:has(strong) strong {
+        font-size: 1.02rem;
+    }
+}
