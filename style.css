@@ -134,7 +134,11 @@ body:has(#accepted) #program table tr:has(strong) strong {
     line-height: 1.4;
 }
 
-body:has(#accepted) #program table tr:has(strong) + tr:has(i) td {
+/* The Xyntia entry has a legacy empty row between its title and abstract. */
+body:has(#accepted) #program table :is(
+    tr:has(strong) + tr:has(i),
+    tr:has(strong) + tr:not(:has(i)) + tr:has(i)
+) td {
     padding: 0.9rem 1.25rem 1.15rem;
     background: #fff !important;
     border: 1px solid #d5e0eb;
@@ -147,12 +151,18 @@ body:has(#accepted) #program table tr:has(strong) + tr:has(i) td {
     hyphens: auto;
 }
 
-body:has(#accepted) #program table tr:has(strong) + tr:has(i) i {
+body:has(#accepted) #program table :is(
+    tr:has(strong) + tr:has(i),
+    tr:has(strong) + tr:not(:has(i)) + tr:has(i)
+) i {
     display: block;
     font-style: normal;
 }
 
-body:has(#accepted) #program table tr:has(strong) + tr:has(i) i::before {
+body:has(#accepted) #program table :is(
+    tr:has(strong) + tr:has(i),
+    tr:has(strong) + tr:not(:has(i)) + tr:has(i)
+) i::before {
     content: "Abstract";
     display: block;
     margin-bottom: 0.35rem;
@@ -164,7 +174,7 @@ body:has(#accepted) #program table tr:has(strong) + tr:has(i) i::before {
     text-align: left;
 }
 
-/* Remove the redundant blank row before the first short-talk abstract. */
+/* Remove redundant blank rows between a talk title and its abstract. */
 body:has(#accepted) #program table tr:has(strong) + tr:not(:has(i)) {
     display: none;
 }
@@ -188,7 +198,8 @@ body:has(#accepted) #program table tr:has(strong) + tr:not(:has(i)) {
     }
 
     body:has(#accepted) #program table tr:has(strong) td,
-    body:has(#accepted) #program table tr:has(strong) + tr:has(i) td {
+    body:has(#accepted) #program table tr:has(strong) + tr:has(i) td,
+    body:has(#accepted) #program table tr:has(strong) + tr:not(:has(i)) + tr:has(i) td {
         padding-left: 1rem;
         padding-right: 1rem;
     }
