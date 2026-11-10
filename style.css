@@ -52,80 +52,121 @@ footer {
     margin-top: 40px;
 }
 
-/* A readable, conventional schedule table; keep session rows distinct from talks. */
-#program table {
-    display: block;
+/* Homepage schedule: keep the time/event table as a real, aligned table. */
+body:has(#overview) #program table {
     width: 100%;
-    overflow-x: auto;
-    border-collapse: collapse !important;
-    border-spacing: 0;
-    font-family: inherit !important;
+    border-collapse: collapse;
+    font-family: inherit;
     margin: 1rem 0 2rem;
     color: #263445;
 }
 
-#program table thead,
-#program table tbody {
-    width: 100%;
-}
-
-#program table th,
-#program table td {
-    padding: 0.85rem 1rem !important;
+body:has(#overview) #program th,
+body:has(#overview) #program td {
+    padding: 0.8rem 1rem;
     border: 1px solid #d8e0e8;
     text-align: left;
     vertical-align: top;
     line-height: 1.55;
 }
 
-#program table th {
+body:has(#overview) #program th {
     background: #002147;
     color: #fff;
-    font-weight: 700;
 }
 
-#program table th:first-child,
-#program table td:first-child {
-    width: 1%;
+body:has(#overview) #program th:first-child,
+body:has(#overview) #program td:first-child {
     white-space: nowrap;
-    color: #334155;
     font-variant-numeric: tabular-nums;
 }
 
-/* Talk rows should stay plain and easy to scan, not be mistaken for abstract cards. */
-#program table tbody tr:has(td strong) td {
-    background: #fff !important;
-}
-
-#program table tbody tr:has(td strong):nth-child(even) td {
-    background: #f7f9fc !important;
-}
-
-#program table td strong {
-    color: #12345a;
-    line-height: 1.45;
-}
-
-#program table td a {
-    white-space: nowrap;
-}
-
-/* Session labels and the keynote label are full-width visual dividers. */
-#program table tbody tr:has(td[style*="background-color: #d9d9d9"]) td,
-#program table tbody tr:has(td[colspan="2"]) td {
+body:has(#overview) #program tbody tr:has(td[style*="background-color: #d9d9d9"]) td,
+body:has(#overview) #program tbody tr:has(td[colspan="2"]) td {
     background: #e8eef5 !important;
     color: #12345a;
     font-weight: 700;
     border-top: 2px solid #b8c8d9;
 }
 
-#program table tbody tr:has(td[colspan="2"]) td {
+body:has(#overview) #program tbody tr:has(td[colspan="2"]) td {
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
 
-#program > p {
-    margin-bottom: 1rem;
+body:has(#overview) #program tbody tr:has(td strong) td {
+    background: #fff !important;
+}
+
+body:has(#overview) #program tbody tr:has(td strong):nth-child(even) td {
+    background: #f7f9fc !important;
+}
+
+body:has(#overview) #program td strong {
+    color: #12345a;
+}
+
+body:has(#overview) #program td a {
+    white-space: nowrap;
+}
+
+/* Accepted-paper abstracts are styled only on accepted.html, never on the schedule. */
+body:has(#accepted) #program table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: inherit;
+    margin: 0.5rem 0 2rem;
+}
+
+body:has(#accepted) #program table tr:has(strong) td {
+    padding: 1rem 1.25rem 0.8rem;
+    background: #eaf1f8 !important;
+    border: 1px solid #d5e0eb;
+    border-bottom: 0;
+    color: #12345a;
+    line-height: 1.55;
+}
+
+body:has(#accepted) #program table tr:has(strong) strong {
+    display: inline-block;
+    font-size: 1.12rem;
+    line-height: 1.4;
+}
+
+body:has(#accepted) #program table tr:has(strong) + tr:has(i) td {
+    padding: 0.9rem 1.25rem 1.15rem;
+    background: #fff !important;
+    border: 1px solid #d5e0eb;
+    border-top: 0;
+    border-radius: 0 0 0.6rem 0.6rem;
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.75;
+    text-align: justify;
+    hyphens: auto;
+}
+
+body:has(#accepted) #program table tr:has(strong) + tr:has(i) i {
+    display: block;
+    font-style: normal;
+}
+
+body:has(#accepted) #program table tr:has(strong) + tr:has(i) i::before {
+    content: "Abstract";
+    display: block;
+    margin-bottom: 0.35rem;
+    color: #12345a;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/* Remove the redundant blank row before the first short-talk abstract. */
+body:has(#accepted) #program table tr:has(strong) + tr:not(:has(i)) {
+    display: none;
 }
 
 @media (max-width: 600px) {
@@ -138,11 +179,21 @@ footer {
         margin: 0.35rem 0.5rem;
     }
 
-    #program table {
+    body:has(#overview) #program {
+        overflow-x: auto;
+    }
+
+    body:has(#overview) #program table {
         min-width: 680px;
     }
 
-    #program {
-        overflow-x: auto;
+    body:has(#accepted) #program table tr:has(strong) td,
+    body:has(#accepted) #program table tr:has(strong) + tr:has(i) td {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    body:has(#accepted) #program table tr:has(strong) strong {
+        font-size: 1.02rem;
     }
 }
