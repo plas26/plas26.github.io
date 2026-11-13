@@ -39,41 +39,75 @@
 
     <main>
       <section id="accepted">
-        <h2>Accepted Papers</h2>
+        <!-- <h2>Accepted Papers</h2> -->
         <p>The list of accepted papers at PLAS'2026 with their abstract.</p>
 
- 	      <h3>Invited Speaker</h3>
-        <div style="display: flex; gap: 40px;" >
+ 	      <!-- <h3>Invited Speaker</h3> -->
+        <!-- <div style="display: flex; gap: 40px;" > -->
 
-          <div style="margin:auto; text-align: center;">
-            <img src="https://people.mpi-sws.org/~dg/images/pic1.jpg" height="200" width="200">
-            <br/>
-            <a href="https://people.mpi-sws.org/~dg/">Deepak Garg</a>
-            <p> Max Planck Institute for Software Systems</p>
+        <!--   <div style="margin:auto; text-align: center;"> -->
+        <!--     <img src="https://people.mpi-sws.org/~dg/images/pic1.jpg" height="200" width="200"> -->
+        <!--     <br/> -->
+        <!--     <a href="https://people.mpi-sws.org/~dg/">Deepak Garg</a> -->
+        <!--     <p> Max Planck Institute for Software Systems</p> -->
+        <!--   </div> -->
+        <!-- </div> -->
+
+        <div class="row">
+          <div class="col-12">
+            <h2>Invited Speakers</h2>
+          </div>
+          <div class="col-12 col-md-3 cn">
+            <center class="inner">
+              <a href="https://people.mpi-sws.org/~dg/">
+                <img class="rounded img-fluid"
+                     src="https://people.mpi-sws.org/~dg/images/pic1.jpg" height="200" width="200"/>
+                <br/>Deepak Garg</a><br/>
+              Max Planck Institute for Software Systems<br/><br/>
+            </center>
+          </div>
+          <div class="col-12 col-md-9";>
+            <h4 text-align="left">Towards robust verification of code compiled from unsafe languages</h4>
+            <p><b>Abstract.</b>
+              In security practice, verified
+              properties of a trusted component are only
+              meaningful if they are robust, i.e., if they hold
+              when the component is linked with arbitrary
+              untrusted code. The standard way to establish a
+              robust property of compiled code, as captured
+              broadly in the area of compiler security, is to
+              prove the property for the source program and show
+              that the compiler robustly preserves it. However,
+              for memory-unsafe languages like C, this approach is
+              a non-starter: co-linked untrusted code, that we did
+              not verify, can trigger undefined behavior, so the
+              source program has no robust properties in the first
+              place! Any security of the compiled code comes from
+              the compiler, e.g., from hardening that turns
+              out-of-bounds memory accesses into safe
+              fail-stops. This talk presents a way to nonetheless
+              verify such programs with reasoning at the source
+              level. The key insight is to use a program logic
+              whose proof rules follow the syntax of the source
+              program, but whose soundness theorem speaks about
+              the compiled program linked with arbitrary
+              target-language code. The rules may therefore rely
+              on guarantees that the source semantics does not
+              provide but the hardening compiler enforces. To
+              prove such a soundness theorem, we rely on DimSum, a
+              multi-language semantic framework that models source
+              programs, target programs and specifications as
+              labeled transition systems. Generic linking and
+              wrapping constructs in DimSum allow for modular
+              proofs of soundness. The talk will cover the broad
+              framework alongside one or two instances that start
+              from a C-like language, compile to a capability
+              architecture inspired by Cheri, with dedicated
+              program logics designed to enforce robust safety or
+              robust confidentiality properties.
+            </p>
           </div>
         </div>
-
-        <!-- <div class="row"> -->
-          <!--   <div class="col-12"> -->
-            <!--     <h2>Invited Speakers</h2> -->
-            <!--   </div> -->
-          <!--   <div class="col-12 col-md-3 cn"> -->
-            <!--     <center class="inner"> -->
-              <!--       <a href="https://people.mpi-sws.org/~dg/"> -->
-                <!--         <img class="rounded img-fluid" -->
-                <!--              src="https://people.mpi-sws.org/~dg/images/pic1.jpg" height="200" width="200"/> -->
-                <!--         <br/>Deepak Garg</a><br/> -->
-              <!--       Max Planck Institute for Software Systems<br/><br/> -->
-              <!--     </center> -->
-            <!--   </div> -->
-          <!--   <div class="col-12 col-md-9";> -->
-            <!--     <br/> -->
-            <!--     <h4 text-align="left">TODO TITLE</h4> -->
-            <!--     <p><b>Abstract.</b> -->
-              <!--       TODO ABSTACT -->
-              <!--     </p> -->
-            <!--   </div> -->
-          <!-- </div> -->
         
 	    </section> 
 
